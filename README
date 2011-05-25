@@ -47,7 +47,6 @@ The parent widget has a CRUD for child widgets :
 # Datas you can syncronize with the server are all fields begining 
 with the prefix sync:
 
-`code`
 
 ## code
 

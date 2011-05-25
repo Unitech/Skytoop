@@ -47,8 +47,11 @@ The parent widget has a CRUD for child widgets :
 # Datas you can syncronize with the server are all fields begining 
 with the prefix sync:
 
+`code`
 
-`$.fn.widgetGen.defaults = {
+## code
+
+$.fn.widgetGen.defaults = {
 	syncType	: '',
 	syncX		: 0,
 	syncY		: 0,
@@ -59,7 +62,7 @@ with the prefix sync:
 	syncData3	: '',
 	syncTitle	: '',
 	syncId		: 0
-    };`
+    };
 
 # For an example refer to static/widgets/notes/jquery.stickynote.js 
 or static/widgets/widgetsGen/sample-widget.js

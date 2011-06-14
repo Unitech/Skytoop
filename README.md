@@ -129,3 +129,7 @@ or static/widgets/widgetsGen/sample-widget.js
     └── winamp
 
 
+# License
+
+Skytoop is under MIT license.
+

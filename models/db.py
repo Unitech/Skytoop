@@ -61,8 +61,6 @@ else:
 #
 #########################################################
 
-imagetypes = set(['gif','jpg','jpeg','png','bmp', 'JPG', 'PNG', 'GIF', 'BMP'])
-
 #
 # Logger
 #

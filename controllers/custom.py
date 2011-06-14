@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*- 
+
+#
+# Copyright 2011, Alexandre Strzelewicz
+# Licensed under the MIT Version
+#
+
+
 #########################################################
 #
 # Desktop customization controllers

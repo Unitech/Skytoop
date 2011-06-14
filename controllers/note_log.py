@@ -1,4 +1,10 @@
 #
+# Copyright 2011, Alexandre Strzelewicz
+# Licensed under the MIT Version
+#
+
+
+#
 #
 # On the index page for displaying recent changes (at the medium right)
 #

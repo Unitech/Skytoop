@@ -1,4 +1,10 @@
 #
+# Copyright 2011, Alexandre Strzelewicz
+# Licensed under the MIT Version
+#
+
+
+#
 #
 # For search bar + public Skytoops
 #

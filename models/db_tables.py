@@ -178,3 +178,6 @@ db.define_table('entr_vote_user',
 db.define_table('remarks',
                 Field('content', type='text', requires=IS_NOT_EMPTY()),
                 Field('author', db.auth_user))
+
+
+imagetypes = set(['gif','jpg','jpeg','png','bmp', 'JPG', 'PNG', 'GIF', 'BMP'])

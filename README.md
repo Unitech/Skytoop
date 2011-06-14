@@ -34,11 +34,12 @@ located in static/widgets/widgetsGen/jquery.widgetsGen.js
 
 To add a new widget :
 
-1. Add the name (represented by his name in syncType) of the widget in :
+1. Add the name (represented by his name in syncType) of the widget in
 
-── $.fn.widgetGen.select
+    ── $.fn.widgetGen.select
 
-The parent widget has a CRUD for child widgets :
+The parent widget has a CRUD for child widgets
+
     ── $.fn.widgetGen.save
     ── $.fn.widgetGen.update
     ── $.fn.widgetGen.remove
@@ -47,7 +48,7 @@ The parent widget has a CRUD for child widgets :
 2. Datas you can syncronize with the server are all fields begining 
 with the prefix sync:
 
-     $.fn.widgetGen.defaults = {
+    $.fn.widgetGen.defaults = {
 	syncType	: '',
 	syncX		: 0,
 	syncY		: 0,

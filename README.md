@@ -3,6 +3,7 @@
 I did Skytoop to learn Ajax, Web2Py and Jquery intensively.
 
 **You can check a demo version on http://www.skytoop.com**
+    
     username = demo@skytoop.com
     password = 123456
 

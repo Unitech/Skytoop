@@ -337,16 +337,16 @@ body {
 
 
 #logo {
-    background-image : url(../cloudy.png);
+    background-image : url(../logoh.png);
     position : absolute;
     top: 50%;
     left : 50%;
-    margin-left : -35px;
-    margin-top : -24px;
+    margin-left : -33px;
+    margin-top : -30px;
     right: 0;
     bottom: 0;
-    width: 76px;
-    height: 49px;
+    width: 67px;
+    height: 60px;
 }
 
 #right_sidebar { width: 160px; float:right; display: none; }

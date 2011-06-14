@@ -3,3 +3,5 @@
 2011-05-25 00:33:51,955 DEBUG 1969 140693934114560 person_speed_search():19 []
 2011-05-25 00:40:08,501 DEBUG 1969 140693883758336 get_configured_logger():76 SkytoopGit logger created
 2011-05-25 00:40:08,501 DEBUG 1969 140693883758336 get_configured_logger():80 Server launched in developpment mode
+2011-06-14 13:24:50,066 DEBUG 5896 140376268478208 get_configured_logger():82 Skytoop logger created
+2011-06-14 13:24:50,067 DEBUG 5896 140376268478208 get_configured_logger():86 Server launched in developpment mode

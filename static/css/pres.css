@@ -49,6 +49,7 @@
     text-align : left;
     margin-left : 30px;
     margin-top : 20px;
+    
 }
 
 #what-is-skytoop li{
@@ -112,4 +113,12 @@
     margin-left : 180px;
     font-size : 14px;
     margin-top : 20px;
+}
+
+#forkme {
+    width : 149px;
+    height : 149px;
+    position : absolute;
+    top : 0%;
+    left : 0%;
 }

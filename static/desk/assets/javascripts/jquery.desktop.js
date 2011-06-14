@@ -1,9 +1,11 @@
 
 /*
  *
- * Skytoop main lib
- * by Strzelewicz Alexandre
- * Since 01/01/2011
+ * Skytoop main interface
+ *
+ * Copyright 2011, Alexandre Strzelewicz
+ * Licensed under the MIT Version
+ *
  *
  */
 

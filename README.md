@@ -2,9 +2,9 @@
 
 I did Skytoop to learn Ajax, Web2Py and Jquery intensively.
 
-You can check a demo version on http://www.skytoop.com 
-: username = demo@skytoop.com
-: password = 123456
+**You can check a demo version on http://www.skytoop.com**
+    username = demo@skytoop.com
+    password = 123456
 
 ## How to use the sources ? 
 
@@ -34,7 +34,7 @@ located in static/widgets/widgetsGen/jquery.widgetsGen.js
 
 To add a new widget :
 
-1. Add the name (represented by his name in syncType) of the widget in
+Add the name (represented by his name in syncType) of the widget in
 
     ── $.fn.widgetGen.select
 
@@ -45,7 +45,7 @@ The parent widget has a CRUD for child widgets
     ── $.fn.widgetGen.remove
     ── $.fn.widgetGen.send
 
-2. Datas you can syncronize with the server are all fields begining 
+Datas you can syncronize with the server are all fields begining 
 with the prefix sync:
 
      $.fn.widgetGen.defaults = {
@@ -61,7 +61,7 @@ with the prefix sync:
 	syncId		: 0
      };
 
-3. For an example refer to static/widgets/notes/jquery.stickynote.js 
+For an example refer to static/widgets/notes/jquery.stickynote.js 
 or static/widgets/widgetsGen/sample-widget.js
 
 ## Files

@@ -1,0 +1,26 @@
+(dp1
+S'content_full'
+p2
+S'TEXT'
+p3
+sS'votes'
+p4
+S'INTEGER'
+p5
+sS'author'
+p6
+S'CHAR(512)'
+p7
+sS'content'
+p8
+S'TEXT'
+p9
+sS'date_created'
+p10
+S'TIMESTAMP'
+p11
+sS'id'
+p12
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p13
+s.

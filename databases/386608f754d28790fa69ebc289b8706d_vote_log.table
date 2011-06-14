@@ -1,0 +1,26 @@
+(dp1
+S'content_full'
+p2
+S'LONGTEXT'
+p3
+sS'votes'
+p4
+S'INT'
+p5
+sS'author'
+p6
+S'VARCHAR(255)'
+p7
+sS'content'
+p8
+S'LONGTEXT'
+p9
+sS'date_created'
+p10
+S'DATETIME'
+p11
+sS'id'
+p12
+S'INT AUTO_INCREMENT NOT NULL'
+p13
+s.

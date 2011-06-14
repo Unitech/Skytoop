@@ -1,0 +1,26 @@
+(dp1
+S'user_id'
+p2
+S'INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE'
+p3
+sS'public_actif'
+p4
+S'CHAR(1)'
+p5
+sS'stored_data_size'
+p6
+S'INT'
+p7
+sS'user_alias'
+p8
+S'VARCHAR(255)'
+p9
+sS'id'
+p10
+S'INT AUTO_INCREMENT NOT NULL'
+p11
+sS'limit_stored_data_size'
+p12
+S'INT'
+p13
+s.

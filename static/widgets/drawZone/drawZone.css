@@ -1,0 +1,98 @@
+
+/*
+ *  Zone selection
+ */
+
+.zone-selection{
+    position:absolute;
+    border : 3px solid #444; 
+    -moz-border-radius: 10px; 
+    border-radius: 10px;
+    display : block; 
+    opacity : 0.6;
+}
+
+.zone-bottom-options{
+    position : absolute;
+    z-index : 4;
+    bottom : 0%;
+    right : 0%;
+    width : 70px;
+    height : 20px;
+    display : block;
+    opacity : 0.2;
+    border-left : 3px solid #444;
+    border-top : 3px solid #444;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+    background-color : #444;
+} 
+
+#open-all{
+    z-index : 4;
+    font-color : white;
+    position : absolute;
+    right : 0%;
+    top : 0%;
+    color : white;
+    font-weight : bold;
+    width : 70px;
+    text-align : center;
+    padding-top : 2px;
+    height : 18px;
+    background-color : #444;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#open-all:hover{
+    opacity : 0.7;
+}
+
+.title-zone{
+    z-index : 4;
+    position : absolute;
+    left : 0px;
+    top : -17px;
+    left : 8px;
+    color : white;
+    font-weight : bold;
+    text-align : center;
+    font-size : 13px;
+}
+
+.zone-bottom-options:hover{
+    opacity : 1;
+}
+
+.delete-zone{
+    position : absolute;
+    right : 0px;
+    top : 3px;
+    background : transparent url(trash.png) no-repeat top left;
+    width : 20px;
+    height : 15px;
+}
+
+.resize-zone{
+    position : absolute;
+    right : 20px;
+    top : 3px;
+    background : transparent url(doc_resize.png) no-repeat top left;
+    width : 20px;
+    height : 15px;
+}
+
+.move-zone{
+   position : absolute;
+   right : 42px;
+   top : 3px;
+   background : transparent url(move-cursor.png) no-repeat top left;
+   width : 20px;
+   height : 15px;
+}
+
+.title-zone:hover{
+opacity : 0.5;    
+}
+

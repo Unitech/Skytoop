@@ -1,0 +1,14 @@
+(dp1
+S'desktop_link'
+p2
+S'INT, INDEX desktop_link__idx (desktop_link), FOREIGN KEY (desktop_link) REFERENCES desktop(id) ON DELETE CASCADE'
+p3
+sS'id'
+p4
+S'INT AUTO_INCREMENT NOT NULL'
+p5
+sS'user_link'
+p6
+S'INT, INDEX user_link__idx (user_link), FOREIGN KEY (user_link) REFERENCES auth_user(id) ON DELETE CASCADE'
+p7
+s.

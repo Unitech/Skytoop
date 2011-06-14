@@ -1,0 +1,14 @@
+(dp1
+S'widget_link'
+p2
+S'INTEGER REFERENCES widgets_entr(id) ON DELETE CASCADE'
+p3
+sS'id'
+p4
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p5
+sS'desktop_link'
+p6
+S'INTEGER REFERENCES desktop(id) ON DELETE CASCADE'
+p7
+s.

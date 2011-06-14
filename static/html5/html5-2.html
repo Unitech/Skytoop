@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>Sample HTML5 Structure</title>
+<style>
+
+  #a{
+  border : 1px solid black;
+  }
+
+</style>
+<script 
+<script>
+
+  function draw(){
+  
+  var canvas = document.getElementById("a");
+  var context = canvas.getContext("2d");
+  
+  for (var x = 0.5; x < 500; x += 10){
+			context.moveTo(x, 0);
+			context.lineTo(x, 375);
+}
+
+  context.strokeStyle = "#eee";
+  context.stroke();
+  }
+
+
+</script>
+</head>
+<body>
+  <canvas id="a" width="500" height="375"></canvas>
+  <a href="#" onclick="draw()">Click me</a>
+</body>
+</html>

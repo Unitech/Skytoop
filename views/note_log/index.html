@@ -1,0 +1,19 @@
+{{extend 'layout.html'}}
+
+<h2>URLS</h2>
+
+<p> /web_desktop/note_log/display_form/[ID]</p>
+
+<h2>Create New note log</h2>
+{{=form}}
+
+<h2>Note log</h2>
+
+<ul>
+{{for note in notes:}}
+<a href="note_log/display_form/{{=note.id}}"> {{=LI(note.content)}}</a>
+<br/>
+{{=note.date_created}}
+{{=note.id}}
+{{pass}}
+</ul>

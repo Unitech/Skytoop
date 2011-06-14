@@ -1,0 +1,61 @@
+{{extend 'layout.html'}}
+
+{{include 'layouts_parts/beta_info.html'}}
+
+{{include 'web2py_ajax.html'}}
+
+<link rel="stylesheet" href="{{=URL('static','css/composant.css')}}" />
+
+<div class="search-form-public">
+  <form action="#" name="tmp" id="search-pub-form">
+    <input type="text" id="name" name="name" style="width: 262px"/><br />
+    <div style="position: absolute;" id="suggestions" class="suggestions"></div>
+  </form>
+</div>
+
+<div style="position : absolute; top : 1%; left :1%;">
+  <a href="{{=URL('default', 'index')}}" style="color : white">Back to Skytoop</a>
+</div>
+<script language="javascript">
+
+operation_pending = {
+    start : function(){
+	this.id = $('#logo');
+	this.id.fadeOut(2200).fadeIn(2200);
+	this.break_wallpaper = setInterval(function() {
+	        $('#logo').fadeOut(2200).fadeIn(2200);
+	    }, 4400);
+    },
+    finish : function(){
+	clearInterval(this.break_wallpaper);
+	this.id.fadeIn('fast');
+    }
+};
+
+jQuery(document).ready(function() {
+operation_pending.start();
+
+var search = $('#name');
+		{{if request_name == None:}}
+		search.val('Search for public Skytoop');
+                {{else:}}
+                search.val('{{=request_name}}')
+{{pass}}
+		search.focus(function(){
+		    if(this.value == 'Search for public Skytoop') {this.value = '';}
+		});
+		search.blur(function(){
+		    if (this.value == '') {this.value = 'Search for public Skytoop';}
+		    //$('#desktop').die();
+		});
+
+      $("#name").keyup(function(){
+      ajax('/Skytoop/public/person_speed_search', ['name'], 'suggestions')
+      });
+
+});
+
+<!--
+ jQuery("#web2py_user_form input:visible:enabled:first").focus();
+//-->
+</script> 

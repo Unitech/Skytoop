@@ -1,0 +1,5 @@
+2011-05-25 00:15:56,400 DEBUG 1969 140693917329152 first_login():26 New user : Model.Model
+2011-05-25 00:33:51,955 DEBUG 1969 140693934114560 person_speed_search():18 user
+2011-05-25 00:33:51,955 DEBUG 1969 140693934114560 person_speed_search():19 []
+2011-05-25 00:40:08,501 DEBUG 1969 140693883758336 get_configured_logger():76 SkytoopGit logger created
+2011-05-25 00:40:08,501 DEBUG 1969 140693883758336 get_configured_logger():80 Server launched in developpment mode

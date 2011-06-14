@@ -1,0 +1,7 @@
+{{extend 'layouts/layout_login.html'}}
+
+<h2>Public Skytoops</h2>
+
+{{for dt in desktops:}}
+<a href="{{=URL('public', 'index/' + dt.user_alias)}}">{{=dt.user_alias}}</a><br/>
+{{pass}}

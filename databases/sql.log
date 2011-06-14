@@ -1,0 +1,356 @@
+timestamp: 2011-03-23T00:04:44.054404
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512)
+);
+success!
+timestamp: 2011-03-23T00:04:44.065279
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2011-03-23T00:04:44.067366
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.070069
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2011-03-23T00:04:44.072415
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2011-03-23T00:04:44.075724
+CREATE TABLE auth_settings(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stored_data_size INTEGER,
+    limit_stored_data_size INTEGER,
+    user_alias CHAR(512),
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.109806
+CREATE TABLE allfiles(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    filename CHAR(512),
+    filepath CHAR(512),
+    parentpath CHAR(512),
+    filetype CHAR(512),
+    file CHAR(512),
+    content TEXT,
+    datecreated TIMESTAMP,
+    datemodified TIMESTAMP,
+    filesize INTEGER,
+    user_file INTEGER REFERENCES auth_user(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.112047
+CREATE TABLE desktop(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    desk_name CHAR(21),
+    is_private CHAR(1),
+    is_default CHAR(1),
+    pwd CHAR(512),
+    wallpaper CHAR(256),
+    back_color CHAR(10),
+    position CHAR(15)
+);
+success!
+timestamp: 2011-03-23T00:04:44.114238
+CREATE TABLE entr_user_desktop(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_link INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    desktop_link INTEGER REFERENCES desktop(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.116702
+CREATE TABLE widgets(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type CHAR(21),
+    x INTEGER,
+    y INTEGER,
+    width INTEGER,
+    height INTEGER,
+    title CHAR(128),
+    data1 CHAR(256),
+    data2 CHAR(256),
+    data3 CHAR(256),
+    user_link INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    desktop_link INTEGER REFERENCES desktop(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.118958
+CREATE TABLE icons(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    x INTEGER,
+    y INTEGER,
+    direct_link CHAR(1),
+    logo_link CHAR(128),
+    url CHAR(128),
+    user_link INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    desktop_link INTEGER REFERENCES desktop(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.121491
+CREATE TABLE widgets_entr(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type CHAR(21),
+    x INTEGER,
+    y INTEGER,
+    width INTEGER,
+    height INTEGER,
+    title CHAR(128),
+    data1 CHAR(256),
+    data2 CHAR(256),
+    data3 CHAR(256)
+);
+success!
+timestamp: 2011-03-23T00:04:44.123224
+CREATE TABLE entr_desktop_widgets(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    widget_link INTEGER REFERENCES widgets_entr(id) ON DELETE CASCADE,
+    desktop_link INTEGER REFERENCES desktop(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.124840
+CREATE TABLE note_log(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content TEXT,
+    date_created TIMESTAMP
+);
+success!
+timestamp: 2011-03-23T00:04:44.126991
+CREATE TABLE vote_log(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content TEXT,
+    content_full TEXT,
+    author CHAR(512),
+    date_created TIMESTAMP,
+    votes INTEGER
+);
+success!
+timestamp: 2011-03-23T00:04:44.143004
+CREATE TABLE entr_vote_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    auth_user INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    vote_log INTEGER REFERENCES vote_log(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-03-23T00:04:44.145015
+CREATE TABLE remarks(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content TEXT,
+    author INTEGER REFERENCES auth_user(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2011-05-05T14:31:17.116579
+ALTER TABLE auth_settings ADD public_actif CHAR(1);
+timestamp: 2011-05-06T12:46:17.183896
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.193020
+CREATE TABLE auth_group(
+    id INT AUTO_INCREMENT NOT NULL,
+    role VARCHAR(255),
+    description LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.195922
+CREATE TABLE auth_membership(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    group_id INT, INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.199174
+CREATE TABLE auth_permission(
+    id INT AUTO_INCREMENT NOT NULL,
+    group_id INT, INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group(id) ON DELETE CASCADE,
+    name VARCHAR(255),
+    table_name VARCHAR(255),
+    record_id INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.202213
+CREATE TABLE auth_event(
+    id INT AUTO_INCREMENT NOT NULL,
+    time_stamp DATETIME,
+    client_ip VARCHAR(255),
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    origin VARCHAR(255),
+    description LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.206464
+CREATE TABLE auth_settings(
+    id INT AUTO_INCREMENT NOT NULL,
+    stored_data_size INT,
+    limit_stored_data_size INT,
+    user_alias VARCHAR(255),
+    public_actif CHAR(1),
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.213616
+CREATE TABLE allfiles(
+    id INT AUTO_INCREMENT NOT NULL,
+    filename VARCHAR(255),
+    filepath VARCHAR(255),
+    parentpath VARCHAR(255),
+    filetype VARCHAR(255),
+    file VARCHAR(255),
+    content LONGTEXT,
+    datecreated DATETIME,
+    datemodified DATETIME,
+    filesize INT,
+    user_file INT, INDEX user_file__idx (user_file), FOREIGN KEY (user_file) REFERENCES auth_user(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.222048
+CREATE TABLE desktop(
+    id INT AUTO_INCREMENT NOT NULL,
+    desk_name VARCHAR(21),
+    is_private CHAR(1),
+    is_default CHAR(1),
+    pwd VARCHAR(255),
+    wallpaper VARCHAR(255),
+    back_color VARCHAR(10),
+    position VARCHAR(15),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.225040
+CREATE TABLE entr_user_desktop(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_link INT, INDEX user_link__idx (user_link), FOREIGN KEY (user_link) REFERENCES auth_user(id) ON DELETE CASCADE,
+    desktop_link INT, INDEX desktop_link__idx (desktop_link), FOREIGN KEY (desktop_link) REFERENCES desktop(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.228639
+CREATE TABLE widgets(
+    id INT AUTO_INCREMENT NOT NULL,
+    type VARCHAR(21),
+    x INT,
+    y INT,
+    width INT,
+    height INT,
+    title VARCHAR(128),
+    data1 VARCHAR(255),
+    data2 VARCHAR(255),
+    data3 VARCHAR(255),
+    user_link INT, INDEX user_link__idx (user_link), FOREIGN KEY (user_link) REFERENCES auth_user(id) ON DELETE CASCADE,
+    desktop_link INT, INDEX desktop_link__idx (desktop_link), FOREIGN KEY (desktop_link) REFERENCES desktop(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.232401
+CREATE TABLE icons(
+    id INT AUTO_INCREMENT NOT NULL,
+    title VARCHAR(255),
+    x INT,
+    y INT,
+    direct_link CHAR(1),
+    logo_link VARCHAR(128),
+    url VARCHAR(128),
+    user_link INT, INDEX user_link__idx (user_link), FOREIGN KEY (user_link) REFERENCES auth_user(id) ON DELETE CASCADE,
+    desktop_link INT, INDEX desktop_link__idx (desktop_link), FOREIGN KEY (desktop_link) REFERENCES desktop(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.236076
+CREATE TABLE widgets_entr(
+    id INT AUTO_INCREMENT NOT NULL,
+    type VARCHAR(21),
+    x INT,
+    y INT,
+    width INT,
+    height INT,
+    title VARCHAR(128),
+    data1 VARCHAR(255),
+    data2 VARCHAR(255),
+    data3 VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.254275
+CREATE TABLE entr_desktop_widgets(
+    id INT AUTO_INCREMENT NOT NULL,
+    widget_link INT, INDEX widget_link__idx (widget_link), FOREIGN KEY (widget_link) REFERENCES widgets_entr(id) ON DELETE CASCADE,
+    desktop_link INT, INDEX desktop_link__idx (desktop_link), FOREIGN KEY (desktop_link) REFERENCES desktop(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.265687
+CREATE TABLE note_log(
+    id INT AUTO_INCREMENT NOT NULL,
+    content LONGTEXT,
+    date_created DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.268571
+CREATE TABLE vote_log(
+    id INT AUTO_INCREMENT NOT NULL,
+    content LONGTEXT,
+    content_full LONGTEXT,
+    author VARCHAR(255),
+    date_created DATETIME,
+    votes INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.271081
+CREATE TABLE entr_vote_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    auth_user INT, INDEX auth_user__idx (auth_user), FOREIGN KEY (auth_user) REFERENCES auth_user(id) ON DELETE CASCADE,
+    vote_log INT, INDEX vote_log__idx (vote_log), FOREIGN KEY (vote_log) REFERENCES vote_log(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-05-06T12:46:17.284203
+CREATE TABLE remarks(
+    id INT AUTO_INCREMENT NOT NULL,
+    content LONGTEXT,
+    author INT, INDEX author__idx (author), FOREIGN KEY (author) REFERENCES auth_user(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!

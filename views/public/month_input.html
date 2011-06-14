@@ -1,0 +1,17 @@
+{{extend 'layouts/layout_desktop.html'}}
+<style>
+#suggestions { position: relative; }
+.suggestions { color : black; background: white; border: solid 1px #55A6C8; }
+.suggestions DIV { padding: 2px 4px 2px 4px; }
+</style>
+
+<form>
+ <input type="text" id="month" name="month" style="width: 250px" /><br />
+ <div style="position: absolute;" id="suggestions"
+      class="suggestions"></div>
+</form>
+<script>
+jQuery("#month").keyup(function(){
+      ajax('../public/month_selector', ['month'], 'suggestions')
+});
+</script>

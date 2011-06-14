@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{=T.accepted_language or 'en'}}">
+  <head>
+    {{include 'layouts_parts/meta.html'}}
+
+    <!-- CSS INCLUDES -->
+    <link rel="stylesheet" href="{{=URL('static','vote_log/css/vote_log.css')}}" />    
+    <!-- END JS INCLUDE -->
+
+  </head>
+  <body>
+
+    {{from gluon.tools import prettydate}} 
+    <div id="wrapper">
+      <div id="logo">
+	<img src="{{=URL('static','cloudy.png')}}" width="76" height="49" alt="Skytoop"/>
+      </div>
+
+      <div class="main-page">
+
+	<div class="vote-rolls">
+	  <ul class="vote-rolls-content">
+	    {{for vote in votes:}}
+	    <li>	    
+	      <span id="vote-content">{{=XML(vote.content.replace('\n','<br />'))}}</span>
+	      <div id="vote-details">
+		<span id="vote-date">Proposed {{=prettydate(vote.date_created,T)}}</span>
+	      </div>
+	      <div id="vote-space">
+		<span id="vote-arrow">
+		  <span id="vote-up"></span>
+		  <span id="vote-down"></span>		      
+		</span>
+	      </div>
+	    </li>
+	    {{pass}}
+	  </ul>
+	</div>
+
+	<div class="user-settings">
+	  User settings
+	</div>
+
+      </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+      $(window).resize(function(){
+      $('.vote-rolls').css({'width' : window.innerWidth - 300});
+      });
+
+      $('.vote-rolls').css({'width' : window.innerWidth - 300});
+      });
+    </script>
+    {{include 'layouts_parts/stats.html'}}
+  </body>
+</html>
+

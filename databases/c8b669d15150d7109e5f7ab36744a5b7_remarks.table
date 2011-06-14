@@ -1,0 +1,14 @@
+(dp1
+S'content'
+p2
+S'TEXT'
+p3
+sS'id'
+p4
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p5
+sS'author'
+p6
+S'INTEGER REFERENCES auth_user(id) ON DELETE CASCADE'
+p7
+s.

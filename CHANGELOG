@@ -1,0 +1,155 @@
+*
+*
+*  Skytoop
+*  by Strzelewicz Alexandre
+*
+*
+
+8/03/10 :
+- FEATURE ! :
+* Wallpaper can be changed
+* On Private + Public Skytoop !
+* You can choose background color !
+- Filemanager is heavy load protected
+
+7/03/10 :
+- Default desktop at the creation
+- File upload problems fixed
+- Lot of fixes
+- Db pooling enhancements
+- SQL queries optimized + cache
+- GUI fixes
+- Window enhancements
+- Public Search bar ala Facebook
+- Tutorial enhanced
+
+
+28/02/10 :
+- Notifications
+- Added title to Zone drawing
+- FEATURE - Zone link opener
+* Open all links instantly !
+- FEATURE - Search bar
+- Skytoop searching enhanced
+- Bug fixes
+
+26/02/10 :
+- FEATURE - SkyVote:
+* You can now say us 
+what idea you prefer !
+- FEATURE - ShapeDesign :
+* You can make icon package !
+- Add documentation API
+- Powerful element positionning
+
+25/02/10 :
+
+- Favicon 
+- Icon positioning
+- Url rewriting
+- Filemanager remix
+- Fixes
+- Project cleanance
+- Meta/header pages fixed
+- Copyright added
+
+Fixes/Bug/Enhancements :
+- Better Icon position
+- Urls rewriting
+- Filemanager remix
+- Favicon design
+- Project clean
+
+
+
+
+23/02/10 :
+- Firefox style fixed
+- Window resize fixed
+
+22/02/10 :
+- Postgresql
+- Public Desktop in progress
+- Client re-struct
+- JQuery last versions
+- Code exec speed optimized
+- NEW FEATURE :
+* Public Desktop !
+* With nice URL
+* Public Notes implemented
+* Public Icons implemented
+- Lot of fixes
+- Easier navigation
+
+
+21/02/10 :
+- Better icon positioning
+- Widget note enhanced
+- Navigation enhancements
+
+20/02/10 :
+- Chercheur de skytoop 
+- formulaire full ajax, tres clean
+- virer framebreaker
+- \n -> <br/> !!!!!!!!!!!!
+
+
+19/02/10 :
+- Icônes auto resize = compatible toutes resolution sans pert d'icones
+- Ajout de speed shortcuts sur la droite du bureau
+- % position icones
+- note log sur la droite du screen
+- correction partie admin + modif password page
+- ajout de restriction a groupe
+- autres
+
+18/02/10 :
+
+- fonctionnel et style sur firefox
+- Modification des icones
+- SMTP ok
+- Postgresql Ok - pret au deploiement (manque juste modif sur filemanager.py)
+- reorganisation des fichiers + cleaning
+- fusion + minification des JS du filemanager = gain en perf
+- correction par ci par la d'effet de style
+- matrice sur le desktop en cours
+- matrice testee et OK sur les notes (Math.round)
+
+4/02/10 :
+- amelioration de l'affichage du displaying des fichiers
+- clear et blaisage du code du filemanager
+- finaliser la navigation mac like dans l'explorer
+
+
+30/01/10 :
+- mettre le src d'une iframe que lors de son chargement
+- amelioration visu filemanager
+- smooth resize (iframe window iframe fix)
+- redimensionnement automatique
+- allegement du file manager
+- MAJOR CHANGE : /!\ Ajout de l'upload multi fichier /!\
+
+27/01/10 :
+* Reprise en main du code & des web techniques
+* Download ok dans le file manager
+* File manager en iframe intégré
+
+
+Features :
+
+* Multi file upload
+
+* Code is 15% load on server and 85% on client with the help of special Jquery addon created by me :p
+
+Example :
+
+        new JQD.winSys({
+                    WindowTitle: 'Gen win #1',
+                    IconId : {{=i.id}},
+                    IconX : {{=i.x}},
+                    IconY : {{=i.y}},
+                    TemplateUrl : 'asd'
+      }).buildWindow();
+
+=== Will directly create a new window set on client side web browser !
+

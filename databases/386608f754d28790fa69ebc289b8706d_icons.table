@@ -1,0 +1,36 @@
+(dp1
+S'title'
+p2
+S'VARCHAR(255)'
+p3
+sS'url'
+p4
+S'VARCHAR(128)'
+p5
+sS'direct_link'
+p6
+S'CHAR(1)'
+p7
+sS'logo_link'
+p8
+S'VARCHAR(128)'
+p9
+sS'user_link'
+p10
+S'INT, INDEX user_link__idx (user_link), FOREIGN KEY (user_link) REFERENCES auth_user(id) ON DELETE CASCADE'
+p11
+sS'y'
+S'INT'
+p12
+sS'x'
+S'INT'
+p13
+sS'id'
+p14
+S'INT AUTO_INCREMENT NOT NULL'
+p15
+sS'desktop_link'
+p16
+S'INT, INDEX desktop_link__idx (desktop_link), FOREIGN KEY (desktop_link) REFERENCES desktop(id) ON DELETE CASCADE'
+p17
+s.

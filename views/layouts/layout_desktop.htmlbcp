@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="{{=T.accepted_language or 'en'}}">
+  <head>
+    {{include 'layouts_parts/meta.html'}}
+   
+    <!-- CSS INCLUDES -->
+    <link rel="stylesheet" href="{{=URL('static','desk/assets/stylesheets/desktop.css')}}" />
+    <link rel="stylesheet" href="{{=URL('static','desk/assets/scroll/jquery.jscrollpane.css')}}" />
+    <link rel="stylesheet" href="{{=URL('static','css/composant.css')}}" />
+
+    <link rel="stylesheet" href="{{=URL('static','widgets/notes/css/style.css')}}" />
+    <link rel="stylesheet" href="{{=URL('static','widgets/drawZone/drawZone.css')}}" />
+
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+
+    <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+    <!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
+    <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+    <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->	
+
+
+  </head>
+  <body>
+
+    {{#  Desktop wallpaper (returned wallpaper in controller)}}
+    <div id="wallpaper" alt="{{=desktop.wallpaper}}" alt2="{{=desktop.back_color}}" alt3="{{=desktop.position}}"></div>
+
+    {{# Notifier}}
+    <div id="notify-man"></div>
+
+    <div class="abs" id="wrapper">
+
+      	<div id="mask"></div>  
+	{{#------------- TASKBAR ----------------#}}
+	<div class="abs" id="taskbar">
+	  <div id="clock"></div>
+	  <div id="taskbar-user-id">
+	    {{if public == False:}}
+	      {{=auth}}
+	    {{else:}}
+	      {{=auth}}'s public Skytoop
+	    {{pass}}
+	    {{#------------- BAR AUTO COMPLETE SEARCH ----------------#}}
+	    <span id="search-desktops">
+	      <form action="#" name="tmp" id="search-pub-form">
+		<input type="text" id="name" name="name" style="width: 270px"/><br />
+		<div style="position: absolute;" id="suggestions" class="suggestions"></div>
+	      </form>
+	    </span>
+	  </div>
+	  <div id="dock"></div>
+	</div>
+	{{#------------- END TASKBAR ----------------#}}
+
+
+	{{#------------- Desktop (for widgets, ico & co) ----------------#}}
+	<div class="abs" id="desktop">
+	  
+	  <div id="apps-select">
+	    <ul>
+	      <li plug_name="winamp-radio">
+		Winamp radio
+		<span id="install-button">Install</span>
+	      </li>
+	      <li>
+		Docki dock
+	      </li>
+	  </ul>
+	  </div>
+	</div>  
+	
+	
+	{{if modif == True:}}
+	<!-- VOTE LOG REMOVED, REFER TO PREVIOUS REVISION -->
+	<!-- Minimal control panel -->
+	<div class="min-control-panel">
+	  <ul class="min-c-p-content">
+	    <li id="min-c-sep">
+	      Widgets
+	    </li>
+	    <li id="new-icon-desk">
+	      <img src="/Skytoop/static/speed-bar/blog-icon.png"/> Create an icon
+	    </li>
+	    <li id="draw-shape">
+	      <img src="/Skytoop/static/speed-bar/zone-icon.png"/>Draw an icon package
+	    </li>
+	    <li id="new-note-desk">
+	      <img src="/Skytoop/static/speed-bar/stickynote-icon.png"/>Create a note
+	    </li>
+	    <li id="add-apps">
+	      <img src="/Skytoop/static/speed-bar/apps.png"/>Add apps
+	    </li>
+	    <br/>
+	    <li id="min-c-sep">	    
+	      Page access
+	    </li>
+	    {{if public == False:}}
+	    {{#------------------ Private desktop ----------}}
+	    <li id="go-to-public">
+	      Go to my public Skytoop
+	    </li>
+	    <li id="go-to-logout">
+	      Logout me
+	    </li>
+	    {{else:}}
+	    {{#-------------- Public desktop -----------------}}
+	    <li id="back-to-private">
+	      Back to private Skytoop
+	    </li>
+	  </ul>
+	  {{pass}}
+	</ul>
+	<br/>
+	</ul>
+      </div>   
+{{else:}}
+      <div class="min-control-panel">
+<ul class="min-c-p-content">
+	  <li id="min-c-sep">	    
+	    Page access
+	  </li>   
+	  <li id="back-to-private">
+	    Back to Skytoop
+	  </li>
+	</ul>
+</div>
+{{pass}}
+
+    {{#----------- Copyright ----------}}
+    {{include 'layouts_parts/copyright.html'}}
+
+      <div id="remarks-admin">
+        <center><h3>Any feedback ?</h3></center>
+        <TEXTAREA name="content-suggestion" id="remarks-comment" rows=3 cols=20></TEXTAREA>
+        <br/>
+        <input id="remarks-button" style="float : right;" type="button" value="Send">
+      </div>
+</div>
+    <script src="{{=URL('static', 'js/require.js')}}"></script>    
+    <script>
+{{if prod == False:}}
+        require(["{{=URL('static', 'jquery.min.js')}}"
+	], function(){
+	    require(["{{=URL('static', 'js/jquery-ui-1.8.11.js')}}",
+	             "{{=URL('static', 'js/misc-funcs.js')}}",
+	             "{{=URL('static', 'desk/assets/javascripts/skytoopWindow.js')}}",
+		     "{{=URL('static', 'desk/assets/javascripts/skytoopDesktop.js')}}",
+		     "{{=URL('static', 'desk/assets/javascripts/skytoopIcon.js')}}",
+                     "{{=URL('static', 'js/web2py_spe.js')}}",
+                     "{{=URL('static', 'js/main.js')}}",
+		     "{{=URL('static', 'desk/assets/javascripts/jquery.desktop.js')}}",
+		     "{{=URL('static', 'svg/jquery.svg.min.js')}}",
+		     "{{=URL('static', 'widgets/widgetsGen/jquery.widgetsGen.js')}}",
+		     "{{=URL('static', 'widgets/notes/jquery.stickynote.js')}}",
+		     "{{=URL('static', 'widgets/drawZone/jquery.drawZone.js')}}",
+		     "{{=URL('static', 'widgets/winamp/jquery.winamp.js')}}"], function(){
+                         $(document).ready(function() {
+			    main();
+                         });
+		     });
+	});
+{{else:}}
+        require(["{{=URL('static', 'sss.js')}}"
+	], function(){
+                         $(document).ready(function() {
+			    main();
+		     });
+	});
+{{pass}}
+
+
+
+ var publicView;
+ var modif;
+{{if modif == True:}}
+modif = true;
+{{pass}}
+
+{{if public == False:}}
+publiView = false;
+{{pass}}
+    </script>
+
+    {{#------ Google analytics include -----}}
+    {{include 'layouts_parts/stats.html'}}
+
+  </body>
+</html>

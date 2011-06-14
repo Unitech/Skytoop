@@ -1,0 +1,81 @@
+
+@font-face {
+    font-family: 'ComfortaaThin';
+    src: url('Comfortaa_Thin-webfont.eot');
+    src: url('Comfortaa_Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Comfortaa_Thin-webfont.woff') format('woff'),
+         url('Comfortaa_Thin-webfont.ttf') format('truetype'),
+         url('Comfortaa_Thin-webfont.svg#ComfortaaThin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ComfortaaRegular';
+    src: url('Comfortaa_Regular-webfont.eot');
+    src: url('Comfortaa_Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Comfortaa_Regular-webfont.woff') format('woff'),
+         url('Comfortaa_Regular-webfont.ttf') format('truetype'),
+         url('Comfortaa_Regular-webfont.svg#ComfortaaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ComfortaaBold';
+    src: url('Comfortaa_Bold-webfont.eot');
+    src: url('Comfortaa_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Comfortaa_Bold-webfont.woff') format('woff'),
+         url('Comfortaa_Bold-webfont.ttf') format('truetype'),
+         url('Comfortaa_Bold-webfont.svg#ComfortaaBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'BL';
+    src: url('essays1743-webfont.woff');
+}
+
+html {
+    margin : 0;
+    padding : 0;
+    color : black;
+    overflow-y : scroll;
+    -webkit-font-smoothing : antialiased;
+}
+
+body {
+    width : 900px;
+    margin : 0 auto;
+    word-spacing : .1em;
+    padding-bottom : 2em;
+#    background : #444;
+    background-color : white;
+    display : block;
+}
+
+body h1{
+    font-family : 'BL';
+    text-align : center;
+}
+
+body h2{
+    font-family: 'ComfortaaThin';
+
+    text-align : center;
+}
+
+section {
+    border : 1px solid black;
+    border-radius : 10px;
+    margin : 10px;
+}
+
+article{
+    
+}

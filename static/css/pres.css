@@ -1,0 +1,115 @@
+
+
+/*
+ *
+ * WHATS IS (HOME PAGE)
+ *
+ */
+@font-face {
+    font-family: 'ComfortaaThin';
+    src: url('../html5/Comfortaa_Thin-webfont.eot');
+    src: url('../html5/Comfortaa_Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../html5/Comfortaa_Thin-webfont.woff') format('woff'),
+         url('../html5/Comfortaa_Thin-webfont.ttf') format('truetype'),
+         url('../html5/Comfortaa_Thin-webfont.svg#ComfortaaThin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ComfortaaRegular';
+    src: url('../html5/Comfortaa_Regular-webfont.eot');
+    src: url('../html5/Comfortaa_Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../html5/Comfortaa_Regular-webfont.woff') format('woff'),
+         url('../html5/Comfortaa_Regular-webfont.ttf') format('truetype'),
+         url('../html5/Comfortaa_Regular-webfont.svg#ComfortaaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#what-is-skytoop{
+    position : absolute;
+    left : 20px;
+    top : 20px;
+    width : 600px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#what-is-skytoop #wis-content{
+    font: 18px/27px 'ComfortaaRegular', Arial, sans-serif;
+    color : white;
+    text-align:center;
+}
+
+#what-is-skytoop #wis-content h2{
+    color : #6dbac1;
+    text-align : left;
+    margin-left : 30px;
+    margin-top : 20px;
+}
+
+#what-is-skytoop li{
+    padding-left : 10px;
+    list-style-type : none;
+}
+
+#what-is-skytoop li:hover{
+    opacity : 0.5;
+}
+
+#what-is-skytoop #wis-content .list{
+    font: 18px/27px 'ComfortaaRegular', Arial, sans-serif;
+    text-align : left;
+}
+
+#what-is-skytoop #what-is{
+    display : block;
+    text-align : center;
+    font-weight : bold;
+    font-size : 17px;
+    margin-top : 1.0em;
+}
+
+#what-is-skytoop #what-is #click-me{
+    font-size : 11px;
+    font-weight : normal;
+}
+
+.wis-sub-content{
+    font: 18px/27px 'ComfortaaRegular', Arial, sans-serif;
+    display : none;
+    position : absolute;
+    right : 0px;
+    top : 30px;
+
+    width : 0px;
+    height : 600px;
+    margin-left : 50px;
+    padding-top : 20px;
+    padding-left : 30px;
+    border : 3px solid #444;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color : #444;
+}
+
+.wis-sub-content img{
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+
+.hidden{
+    display : none;
+}
+
+#subtitle{
+    display : block;
+    text-align : left;
+    margin-left : 180px;
+    font-size : 14px;
+    margin-top : 20px;
+}

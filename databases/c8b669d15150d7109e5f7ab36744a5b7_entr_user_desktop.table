@@ -1,0 +1,14 @@
+(dp1
+S'desktop_link'
+p2
+S'INTEGER REFERENCES desktop(id) ON DELETE CASCADE'
+p3
+sS'id'
+p4
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p5
+sS'user_link'
+p6
+S'INTEGER REFERENCES auth_user(id) ON DELETE CASCADE'
+p7
+s.

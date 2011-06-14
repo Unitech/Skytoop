@@ -1,0 +1,34 @@
+	$('#draw-shape').click(function(e){
+	var x1,x2,y1,y2;
+
+	$('#desktop').mousedown(function(e) {
+	
+        
+
+
+
+	$("#current").attr({ id: '' });
+	
+	box = $('<div style="border:1px #444 solid;-moz-border-radius: 10px; border-radius: 10px;position:fixed;">').hide();
+	  
+	  $(document.body).append(box);
+	  
+	  x1 = e.pageX;
+	  y1 = e.pageY;
+	  box.attr({id: 'current'}).css({top: e.pageY,left: e.pageX});
+	  });
+
+	  $('#desktop').mousemove(function(e) {
+	
+	  
+	  $("#current").css({
+	  width:Math.abs(e.pageX - x1), //offsets
+	  height:Math.abs(e.pageY - y1) //offsets
+	  }).fadeIn();
+	  });
+	  
+	  $('#desktop').mouseup(function() {
+	  $("#current").attr({ id: '' })
+	  });
+	 
+	  });

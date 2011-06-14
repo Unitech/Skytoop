@@ -1,0 +1,14 @@
+(dp1
+S'content'
+p2
+S'LONGTEXT'
+p3
+sS'id'
+p4
+S'INT AUTO_INCREMENT NOT NULL'
+p5
+sS'author'
+p6
+S'INT, INDEX author__idx (author), FOREIGN KEY (author) REFERENCES auth_user(id) ON DELETE CASCADE'
+p7
+s.

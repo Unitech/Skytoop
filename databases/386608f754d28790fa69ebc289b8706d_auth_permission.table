@@ -1,0 +1,22 @@
+(dp1
+S'record_id'
+p2
+S'INT'
+p3
+sS'group_id'
+p4
+S'INT, INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group(id) ON DELETE CASCADE'
+p5
+sS'table_name'
+p6
+S'VARCHAR(255)'
+p7
+sS'id'
+p8
+S'INT AUTO_INCREMENT NOT NULL'
+p9
+sS'name'
+p10
+S'VARCHAR(255)'
+p11
+s.

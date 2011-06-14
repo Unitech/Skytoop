@@ -1,0 +1,26 @@
+(dp1
+S'stored_data_size'
+p2
+S'INTEGER'
+p3
+sS'public_actif'
+p4
+S'CHAR(1)'
+p5
+sS'user_id'
+p6
+S'INTEGER REFERENCES auth_user(id) ON DELETE CASCADE'
+p7
+sS'user_alias'
+p8
+S'CHAR(512)'
+p9
+sS'id'
+p10
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p11
+sS'limit_stored_data_size'
+p12
+S'INTEGER'
+p13
+s.

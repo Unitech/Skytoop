@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>Sample HTML5 Structure</title>
+<style>
+
+  #a{
+  border : 1px solid black;
+  }
+
+</style>
+<script>
+
+  function draw(){
+  
+  var canvas = document.getElementById("a");
+  var context = canvas.getContext("2d");
+  
+  context.fillRect(50, 25, 150, 150);
+  context.clearRect(70, 40, 70, 70);
+
+  
+  }
+
+  function erase(){
+  canvas.width = canvas.width;
+  }
+</script>
+</head>
+<body>
+  <canvas id="a" width="300" height="225"></canvas>
+  <a href="#" onclick="draw()">Click me</a>
+</body>
+</html>

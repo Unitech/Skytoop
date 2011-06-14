@@ -1,0 +1,43 @@
+{{extend 'layout.html'}}
+
+{{include 'layouts_parts/beta_info.html'}}
+
+<div style="position : absolute; top : 1%; right :1%;">
+  <a href="/" style="color : white">Back to Skytoop</a>
+</div>
+
+<div style="position : absolute;bottom : 1%; left :1%;">
+  <a href="/" style="color : white">Back to Skytoop</a>
+</div>
+
+<style>
+.err-msg{
+    text-align : center;
+    position : absolute;
+    top : 60%;
+    left : 50%;
+    margin-left : -190px;
+}
+</style>
+
+<h2 class="err-msg">Skytoop is actually on maintenance</h2>
+
+<script>
+operation_pending = {
+    start : function(){
+	this.id = $('#logo');
+	this.id.fadeOut(2200).fadeIn(2200);
+	this.break_wallpaper = setInterval(function() {
+	        $('#logo').fadeOut(2200).fadeIn(2200);
+	    }, 4400);
+    },
+    finish : function(){
+	clearInterval(this.break_wallpaper);
+	this.id.fadeIn('fast');
+    }
+};
+
+jQuery(document).ready(function() {
+operation_pending.start();
+});
+</script> 

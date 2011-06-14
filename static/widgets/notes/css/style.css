@@ -1,0 +1,53 @@
+
+.jSticky-medium{
+    z-index : 2;
+    width:160px;
+    height:162px;
+}
+.jSticky-delete{
+    background:transparent url(../images/delete.png) no-repeat top left;
+    height:14px;
+    width:14px;
+    position:absolute;
+    cursor:pointer;
+}
+.jSticky-medium .jStickyNote textarea, .jSticky-medium .jStickyNote p{
+    font-size: 14px;
+    font-weight:bold;
+    height:115px;
+}
+
+.jStickyNote textarea{
+    position : absolute;
+    //width:75%;
+    background-color:transparent;
+    border:none;
+    font-family: 'Comic Sans MS',Textile,cursive;
+    font-size:16px;
+    overflow:hidden;
+    color:#999;
+    padding:0px;
+    margin:15px 0px 0px 24px;
+    float:left;
+    resize:none;
+}
+.jStickyNote p{
+    position : absolute;
+    font-family: 'Comic Sans MS',Textile,cursive;
+    color:#444;
+    margin:15px 0px 0px 24px;
+    overflow:hidden;
+    width:75%;
+    float:left;
+}
+
+.jSticky-medium .jSticky-create{
+    position:absolute;
+    right : 0%;
+    width:14px;
+    height:14px;
+    background:transparent url(../images/ok.png) no-repeat top left;
+    margin-right:1px;
+    margin-top:80%;
+    cursor:pointer;
+}

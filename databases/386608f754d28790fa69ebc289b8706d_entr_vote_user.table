@@ -1,0 +1,14 @@
+(dp1
+S'auth_user'
+p2
+S'INT, INDEX auth_user__idx (auth_user), FOREIGN KEY (auth_user) REFERENCES auth_user(id) ON DELETE CASCADE'
+p3
+sS'id'
+p4
+S'INT AUTO_INCREMENT NOT NULL'
+p5
+sS'vote_log'
+p6
+S'INT, INDEX vote_log__idx (vote_log), FOREIGN KEY (vote_log) REFERENCES vote_log(id) ON DELETE CASCADE'
+p7
+s.

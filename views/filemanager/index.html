@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{{=request.application}}</title>
+        
+        <link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/filemanager/jquery_filetree',f='jqueryFileTree.css')}} />
+        <link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/filemanager/jquery_contextmenu',f='jquery.contextMenu.css')}} />
+        <link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/filemanager/css',f='filemanager.css')}} />
+        <link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/filemanager/css',f='jquery.splitter.css')}} />
+
+	<link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/color-picker',f='farbtastic.css')}} />
+	<link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/multifile-upload',f='fileuploader.css')}} />
+	
+        <!--[if IE]>
+        <link rel="stylesheet" type="text/css" href={{=URL(r=request,c='static/filemanager/css',f='ie.css')}} />
+        <![endif]-->
+
+
+	<script type="text/javascript">
+	  function createUploader(){            
+	  var uploader = new qq.FileUploader({
+//	  listElement : 'list-down',
+	  element: document.getElementById('upload-files'),
+          action: '{{=URL("add")}}',	
+	  sizeLimit: 20000000,		
+          minSizeLimit: 0,         
+          onSubmit: function(id, fileName){},
+          onProgress: function(id, fileName, loaded, total){},
+          onComplete: function(id, fileName, responseJSON){
+	  //$('.qq-upload-list').empty();
+	  },
+          onCancel: function(id, fileName){},
+          messages: {
+          typeError: "{file} {{=T('has invalid extension.')}} {{=T('Only')}} {extensions} {{=T('are allowed.')}}",
+          sizeError: "{file} {{=T('is too large, maximum file size is')}} {sizeLimit}.",
+          minSizeError: "{file} {{=T('is too small, minimum file size is')}} {minSizeLimit}.",
+          emptyError: "{file} {{=T('is empty, please select files again without it.')}}",
+          onLeave: "{{=T('The files are being uploaded, if you leave now the upload will be cancelled.')}}"                         
+          },
+          showMessage: function(message){ alert(message); }        
+	  });           
+	  }
+	  window.onload = createUploader;
+	</script>
+
+    </head>
+    <body>
+
+      <div id="mask"></div>
+      <div id="gen-file">
+      <div id="filemanager">
+	<div id="uploadform"> 
+	  <div id="path_mac"></div>
+	  <div id="file-upload"></div>
+	  <input id="currentpath" name="currentpath" type="hidden" />
+	  <br/>
+<!--	  <button id="newfolder" name="newfolder" type="button" value="New Folder">New Folder</button>-->
+<!--	  <button id="grid" class="ON" type="button" title="Switch to grid view.">&nbsp;</button>
+	  <button id="list" type="button" title="Switch to list view.">&nbsp;</button></nobr>-->
+	</div>
+      <div id="splitter">
+	<div id="filetree"></div>
+	<div id="fileinfo"></div>
+      </div>
+      <!-- Context menu (right click) overide -->
+      <ul id="itemOptions" class="contextMenu">
+        <li class="download"><a href="#download">Download</a></li>
+        <!--<li class="rename"><a href="#rename">Rename</a></li>-->
+        <li class="delete separator"><a href="#delete">Delete</a></li>
+        <li class="wallpaper"><a href="#wallpaper">Set as wallpaper</a></li>
+      </ul>
+    </div>
+
+
+
+      <div id="speed-right-bar">
+	<ul id="speed-right-bar-content">
+	  <li id="upload-files">
+	    Upload files
+	  </li>
+	  <li id="new-folder-speed">
+	    New folder
+	  </li>
+	</ul>
+      </div>
+      </div>
+      <!-- SCRIPTS -->
+<!--      <script type="text/javascript" src={{=URL(r=request,c='static/scripts',f='jquery-1.2.6.min.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/scripts',f='jquery.form.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/scripts',f='jquery.splitter.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/scripts/jquery_filetree',f='jqueryFileTree.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/scripts/jquery_contextmenu',f='jquery.contextMenu.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/scripts',f='jquery.impromptu-1.5.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/scripts',f='jquery.tablesorter.min.js')}}></script>-->
+      <script type="text/javascript" src={{=URL(r=request,c='static/filemanager/js',f='all-lib-comp.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/filemanager/js',f='filemanager.js')}}></script>
+      <script type="text/javascript" src={{=URL(r=request,c='static/multifile-upload',f='fileuploader.js')}}></script>
+
+      <script type="text/javascript" src={{=URL(r=request,c='static/color-picker',f='farbtastic.js')}}></script>
+
+      <script type="text/javascript"> var appname='{{=appname}}'; </script>
+    </body>
+</html>

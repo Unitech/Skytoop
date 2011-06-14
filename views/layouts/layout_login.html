@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{=T.accepted_language or 'en'}}" class="no-js">
+  <head>
+    {{include 'layouts_parts/meta.html'}}
+    <title>Skytoop</title>
+    <link rel="stylesheet" media="handheld" href="{{=URL('static','css/handheld.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','desk/assets/scroll/jquery.jscrollpane.css')}}" />    
+    <link rel="stylesheet" href="{{=URL('static','css/composant.css')}}" />
+    <link rel="stylesheet" href="{{=URL('static','css/pres.css')}}" />
+
+    <script src="{{=URL('static', 'jquery.min.js')}}"></script>    
+    {{#------  require CSS and JS files for this page (read info in base.css) ------}}
+    {{response.files.append(URL('static','css/base.css'))}}
+    {{response.files.append(URL('static','css/modal.css'))}}
+    {{#------ include web2py specific js code (jquery, calendar, form stuff) ------}}
+    {{include 'web2py_ajax.html'}}
+
+    {{
+    #using sidebars need to know what sidebar you want to use
+    #prior of using it, because of static width size of content, you can use
+    #left_sidebar, right_sidebar, both or none (False left and right)    
+    left_sidebar_enabled = globals().get('left_sidebar_enabled',False)
+    right_sidebar_enabled = globals().get('right_sidebar_enabled',False)
+    if left_sidebar_enabled and right_sidebar_enabled: width_content='63%'
+    elif left_sidebar_enabled != right_sidebar_enabled: width_content='740px'
+    else: width_content='100%'
+    if left_sidebar_enabled: left_sidebar_style = 'style="display: block;"'
+    else: left_sidebar_style = 'style="display: none;"'
+    if right_sidebar_enabled: right_sidebar_style = 'style="display: block;"'
+    else: right_sidebar_style = 'style="display: none;"'
+    style_content = 'style="width: %s"' % width_content
+    }}
+  </head>
+  
+  <body>
+    <div class="flash">{{=response.flash or ''}}</div>
+    <div id="container">	      		      	      
+      <div id="logo"></div>
+      <div id="wrapper">		
+	<div id="page">
+	  <div class="book-gold">      
+	    <ul class="book-gold-content">
+	      {{for note in notes_log:}}
+	      <li>
+		{{=XML(note.content.replace('\n','<br />'))}}
+		<div class="date">
+		  {{from gluon.tools import prettydate}}
+		  {{=prettydate(note.date_created,T)}}<br/>
+		</div>
+	      </li>
+	      {{pass}}
+	    </ul>
+	  </div>
+	  <div id="content" {{=XML(style_content)}} >
+	    {{include}}	
+	  </div>
+	  <div style="clear: both;"></div>
+	</div>
+      </div>
+    </div>
+    {{include 'layouts_parts/beta_info.html'}}
+    {{include 'layouts_parts/stats.html'}}
+    <script src="{{=URL('static', 'desk/assets/scroll/jquery.jscrollpane.min.js')}}"></script>
+    <script src="{{=URL('static', 'desk/assets/scroll/jquery.mousewheel.js')}}"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function(){$('.book-gold').jScrollPane();});
+    </script>
+  </body>
+</html>

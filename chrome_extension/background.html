@@ -1,0 +1,29 @@
+<html>
+  <script type="text/javascript" charset="utf-8">
+
+    var url_dest = 'http://www.skytoop.com/';
+    
+    
+    chrome.browserAction.onClicked.addListener (function (tab) {
+    var urol = tab.url;
+    function isSkytoopUrl(url){
+    if (url.indexOf(url_dest) >= 0)
+    return true;
+    else
+    return false;
+    }
+    function getNewUrl(url){
+    return url_dest + "?url=" + url;
+    }
+    chrome.tabs.getAllInWindow(undefined, function(tabs) {
+    for (var i = 0, tab; tab = tabs[i]; i++) {
+    if (tab.url && isSkytoopUrl(tab.url)) {
+    chrome.tabs.update(tab.id, {url : getNewUrl(urol), selected: true});
+    return;
+    }
+    }
+    chrome.tabs.create({url: getNewUrl(urol), selected : true});
+    });
+    });
+  </script>
+</html>

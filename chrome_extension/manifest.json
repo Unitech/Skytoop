@@ -1,0 +1,17 @@
+{
+  "name": "Skytoop marker",
+  "version": "1.0",
+ "homepage_url" : "http://www.skytoop.com/",
+  "description": "Add directly a link on your Skytoop !",
+  "icons": {
+      "128": "128.png",
+      "64": "64.png"
+  },
+  "browser_action": {
+    "default_icon": "64.png"
+  },
+  "background_page": "background.html",
+  "permissions": [
+    "tabs"
+  ]
+}

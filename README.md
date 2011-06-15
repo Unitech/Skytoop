@@ -9,9 +9,7 @@ I did Skytoop to learn Ajax, Web2Py and Jquery intensively.
 
 ## How to use the sources ? 
 
-* Start the server (python web2py.py)
-* Go to http://localhost:8000/Skytoop/default/create_user to create a default user
-* Now go to http://localhost:8000/Skytoop and login with model@skytoop.com, password = 123456
+* You can follow the few steps of this tutorial : http://blog.hemca.com/?p=878
 
 ## Functionnalities
 

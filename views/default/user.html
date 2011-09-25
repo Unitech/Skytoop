@@ -1,10 +1,11 @@
 {{extend 'layouts/layout_login.html'}}
 
-<div id="forkme">
-  <img src="{{=URL('static', 'forkme.png')}}" onclick="alert('soon');"/>
-</div>
+<!-- <div id="forkme"> -->
+<!--   <img src="{{=URL('static', 'forkme.png')}}" onclick="alert('soon');"/> -->
+<!-- </div> -->
 
 <div id="user-form">
+  <input type="button" value="Demo account" id="demo"/>
   {{=form}}
   {{if request.args(0)=='login':}}
   {{if not 'register' in auth.settings.actions_disabled:}}
@@ -16,69 +17,68 @@
   {{pass}}
 </div>
 
-<!-- <div id="what-is-skytoop"> -->
-<!--   <div id="wis-content"> -->
-<!--     <h2>Skytoop... When the cloud comes to you</h2> -->
-<!--     <br/> -->
-<!--     <ul class="list"> -->
-<!--       <li>Store files like image, docs</li> -->
-<!--       <li>Store bookmarks</li> -->
-<!--       <li>Share your public Skytoop</li> -->
-<!--       <\!-- <li>Customize it with widgets or wallpapers</li> -\-> -->
-<!--      <\!-- <li>Add bookmarks directly with a Chrome extension</li> -\-> -->
-<!--     </ul> -->
-<!--   </div> -->
-<!-- </div> -->
+<div id="what-is-skytoop">
+  <div id="wis-content">
+    <h2>Skytoop... When the cloud comes to you</h2>
+    <br/>
+    <ul class="list">
+      <li>Store files like image, docs</li>
+      <li>Store bookmarks</li>
+      <li>Share your public Skytoop</li>
+      <li>Customize it with widgets or wallpapers</li>
+    </ul>
+  </div>
+</div>
 
-<!-- <div class="wis-sub-content"></div> -->
+<div class="wis-sub-content"></div>
 
-<!-- <div class="wis-sub-0 hidden"> -->
-<!-- <br/> -->
-<!--   <center><h2>A cloud filemanager !</h2></center> -->
-<!--   <center> -->
-<!--     <b>{{=T('Upload all files you want !')}}</b> -->
+<div class="wis-sub-0 hidden">
+<br/>
+  <center><h2>A cloud filemanager !</h2></center>
+  <center>
+    <b>{{=T('Upload all files you want !')}}</b>
 
-<!--     <br/>  <br/> -->
-<!--     {{=T('On your Skytoop click on')}} :<br/> -->
-<!--     <img src="{{=URL('static', 'pres-images/cloudy-disk.png')}}"/> -->
-<!--     <br/> -->
-<!--     {{=T('You get a real filemanager')}} !<br/> -->
-<!--     <img src="{{=URL('static', 'pres-images/filemanager.png')}}"/> -->
+    <br/>  <br/>
+    {{=T('On your Skytoop click on')}} :<br/>
+    <img src="{{=URL('static', 'pres-images/cloudy-disk.png')}}"/>
+    <br/>
+    {{=T('You get a real filemanager')}} !<br/>
+    <img src="{{=URL('static', 'pres-images/filemanager.png')}}"/>
 
-<!--   </center> -->
-<!-- </div> -->
-
-
-<!-- <div class="wis-sub-1 hidden"> -->
-<!--   <center> -->
-<!--     <br/>    <br/>    <br/>    <br/> -->
-<!--     <h2>Store and group all bookmarks you want</h2><br/> -->
-<!--     Add links to your Skytoop, group them, customize them...<br/>  -->
-<!--     <img src="{{=URL('static', 'pres-images/icons.png')}}"/> -->
-<!--     <br/> -->
-<!--   </center> -->
-<!-- </div> -->
-
-<!-- <div class="wis-sub-3 hidden"> -->
-<!--   <center> -->
-<!--     <h2>Customize your Skytoop !</h2> -->
-<!--     <img src="{{=URL('static', 'pres-images/color-picker.png')}}"/><br/> -->
-<!--   </center> -->
-<!-- </div> -->
+  </center>
+</div>
 
 
-<!-- <div class="wis-sub-2 hidden"> -->
-<!--   <br/><br/><br/> -->
-<!--   <center> -->
-<!--     <h2>{{=T('Share your links and widgets')}}</h2> -->
-<!--     <b>You have two Skytoop !</b><br/><br/> -->
+<div class="wis-sub-1 hidden">
+  <center>
+    <br/>    <br/>    <br/>    <br/>
+    <h2>Store and group all bookmarks you want</h2><br/>
+    Add links to your Skytoop, group them, customize them...<br/>
+    <img src="{{=URL('static', 'pres-images/icons.png')}}"/>
+    <br/>
+  </center>
+</div>
+
+<div class="wis-sub-3 hidden">
+  <center>
+    <h2>Customize your Skytoop !</h2>
+    <img src="{{=URL('static', 'pres-images/color-picker.png')}}"/><br/>
+  </center>
+</div>
+
+
+<div class="wis-sub-2 hidden">
+  <br/><br/><br/>
+  <center>
+    <h2>{{=T('Share your links and widgets')}}</h2>
+    <b>You have two Skytoop !</b><br/><br/>
     
-<!--     One is private :<br/> -->
-<!--     <img src="{{=URL('static', 'pres-images/private.png')}}"/><br/> -->
-<!--     The other one is public, <b>share his url</b> !<br/> -->
-<!--     <img src="{{=URL('static', 'pres-images/public.png')}}"/><br/> -->
-<!--   </center> -->
-<!-- </div> -->
+    One is private :<br/>
+    <img src="{{=URL('static', 'pres-images/private.png')}}"/><br/>
+    The other one is public, <b>share his url</b> !<br/>
+    <img src="{{=URL('static', 'pres-images/public.png')}}"/><br/>
+  </center>
+</div>
 
 <script src="{{=URL('static', 'js/pres.js')}}"></script>
 <script>

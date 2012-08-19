@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Skytoop : A Nice Desktop in Cloud with a filemanager and a lot of features ! Fork it ! Web2Py" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Skytoop</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Alexandre-Strzelewicz/Skytoop">View on GitHub</a>
+
+          <h1 id="project_title">Skytoop</h1>
+          <h2 id="project_tagline">A Nice Desktop in Cloud with a filemanager and a lot of features ! Fork it ! Web2Py</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Alexandre-Strzelewicz/Skytoop/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Alexandre-Strzelewicz/Skytoop/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Skytoop, an open source cloud desktop</h1>
+
+<p>I did Skytoop to learn Ajax, Web2Py and Jquery intensively.</p>
+
+<p><strong>You can check a demo version on <a href="http://www.skytoop.com">http://www.skytoop.com</a></strong></p>
+
+<pre><code>username = demo@skytoop.com
+password = 123456
+</code></pre>
+
+<h2>How to use the sources ?</h2>
+
+<ul>
+<li>You can follow the few steps of this tutorial : <a href="http://blog.hemca.com/?p=878">http://blog.hemca.com/?p=878</a>
+</li>
+</ul><h2>Functionnalities</h2>
+
+<ul>
+<li>Filemanager (controllers/filemanager.py + views/filemanager)</li>
+<li>Multi file upload </li>
+<li>Size limitation on total file uploaded (db/db_tables.py)</li>
+<li>Wallpapers can be set</li>
+<li>Public/Private Skytoop</li>
+<li>Widgets (static/widgets/)</li>
+<li>Widget Draw (static/widgets/drawZone) (the code is ugly)</li>
+<li>Widget Note (static/widgets/notes)</li>
+<li>Icons</li>
+<li>Ajax Search</li>
+<li>Widgets position synchronisation</li>
+<li>Css + Js compression (with pack.py)</li>
+</ul><h2>Widgets</h2>
+
+<p>The "Parent widget" (this is not a real inheritance, todo) is 
+located in static/widgets/widgetsGen/jquery.widgetsGen.js</p>
+
+<p>To add a new widget :</p>
+
+<p>Add the name (represented by his name in syncType) of the widget in</p>
+
+<pre><code>── $.fn.widgetGen.select
+</code></pre>
+
+<p>The parent widget has a CRUD for child widgets</p>
+
+<pre><code>── $.fn.widgetGen.save
+── $.fn.widgetGen.update
+── $.fn.widgetGen.remove
+── $.fn.widgetGen.send
+</code></pre>
+
+<p>Datas you can syncronize with the server are all fields begining 
+with the prefix sync:</p>
+
+<pre><code> $.fn.widgetGen.defaults = {
+syncType    : '',
+syncX       : 0,
+syncY       : 0,
+syncWidth   : 0,
+syncHeight  : 0,
+syncData1   : '',    
+syncData2   : '',
+syncData3   : '',
+syncTitle   : '',
+syncId      : 0
+ };
+</code></pre>
+
+<p>For an example refer to static/widgets/notes/jquery.stickynote.js 
+or static/widgets/widgetsGen/sample-widget.js</p>
+
+<h2>Files</h2>
+
+<ul>
+<li>JS for Desktop design are on static/desk/assets/javascript/*</li>
+<li>JS for the filemanager are on static/filemanager</li>
+</ul><h3>Controllers</h3>
+
+<pre><code>controllers/
+├── appadmin.py       # Appadmin
+├── custom.py         # To change wallpaper and to switch on a public Skytoop
+├── default.py        # Desktop main controllers
+├── filemanager.py    # Filemanager
+├── get_list.py       # On the index when you click on left bottom Skytoop c, get desktop list
+├── icons.py          # CRUD for icons + favicon.ico grabbing
+├── note_log.py       # On the index page for displaying recent changes
+├── public.py       # For search bar + public Skytoops 
+├── vote_log.py         # Vote log, for voting for features
+└── widget.py         # CRUD widgets
+</code></pre>
+
+<h3>JS/CSS Files</h3>
+
+<pre><code>static/
+├── color-picker           # Color picker when customizing wallpaper
+├── css              # CSS Files
+├── desk         # Main folder for JS/CSS Desktop
+│   └── assets
+│       ├── images
+│       │   ├── gui
+│       │   ├── icons
+│       │   └── misc
+│       ├── javascripts    # @@@ Here are the most important files for Desktop
+│       ├── scroll     # Customization of the scroll bar
+│       └── stylesheets    # CSS files
+├── filemanager          # For the filemanager
+│   ├── css
+│   ├── images
+│   │   └── fileicons
+│   ├── jquery_contextmenu
+│   │   └── images
+│   ├── jquery_filetree
+│   │   └── images
+│   └── js
+├── html5
+├── images
+├── js
+├── multifile-upload    # For the multiple file upload
+├── pres-images
+├── speed-bar       # Images for the "speed bar" at the right of desktops
+├── svg
+├── tmp
+├── vote_log        # For the vote log
+│   ├── css
+│   └── js
+├── wallpapers -&gt; ../uploads/  # to avoid downloading wallpaper each time (not very secure)
+└── widgets         # Widgets
+├── drawZone    
+├── notes
+│   ├── css
+│   └── images
+├── template
+├── widgetsGen
+└── winamp
+</code></pre>
+
+<h1>License</h1>
+
+<p>Skytoop is under MIT license.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Skytoop maintained by <a href="https://github.com/Alexandre-Strzelewicz">Alexandre-Strzelewicz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
